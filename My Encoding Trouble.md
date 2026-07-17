@@ -41,7 +41,7 @@ ValueError: The specified reader encoding utf-8 is different from the encoding c
 ```
 
 utf-8-sig doesn't work either! 
-The ValueError disappears after using encoding="cp1252", but the BOM could not removed. 
+The ValueError disappears after using encoding="cp1252", but the BOM could not be removed. 
 Claude concluded that the BOM is not at the file level, but at the text level.
 
 Therefore, added a logic to remove the BOM:
@@ -109,6 +109,3 @@ Pandas' read_csv( ) does powerful work with encoding. But, it cannot decode when
 
 # The lesson learned
 When using Python's native open( ) function, always handle encoding during file handling! 
-
-
-
